@@ -1,22 +1,920 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <title>Laravel</title>
+    @vite('resources/css/app.css')
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.absolute{position:absolute}.relative{position:relative}.-left-20{left:-5rem}.top-0{top:0px}.-bottom-16{bottom:-4rem}.-left-16{left:-4rem}.-mx-3{margin-left:-0.75rem;margin-right:-0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-video{aspect-ratio:16 / 9}.size-12{width:3rem;height:3rem}.size-5{width:1.25rem;height:1.25rem}.size-6{width:1.5rem;height:1.5rem}.h-12{height:3rem}.h-40{height:10rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-\[calc\(100\%\+8rem\)\]{width:calc(100% + 8rem)}.w-auto{width:auto}.max-w-\[877px\]{max-width:877px}.max-w-2xl{max-width:42rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.self-center{align-self:center}.overflow-hidden{overflow:hidden}.rounded-\[10px\]{border-radius:10px}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.bg-\[\#FF2D20\]\/10{background-color:rgb(255 45 32 / 0.1)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-transparent{--tw-gradient-from:transparent var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.stroke-\[\#FF2D20\]{stroke:#FF2D20}.object-cover{object-fit:cover}.object-top{object-position:top}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pt-3{padding-top:0.75rem}.text-center{text-align:center}.font-sans{font-family:Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-sm\/relaxed{font-size:0.875rem;line-height:1.625}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-semibold{font-weight:600}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\]{--tw-shadow:0px 14px 34px 0px rgba(0,0,0,0.08);--tw-shadow-colored:0px 14px 34px 0px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-transparent{--tw-ring-color:transparent}.ring-white\/\[0\.05\]{--tw-ring-color:rgb(255 255 255 / 0.05)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.06));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\]{--tw-drop-shadow:drop-shadow(0px 4px 34px rgba(0,0,0,0.25));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-\[\#FF2D20\] *::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-\[\#FF2D20\]::selection{--tw-bg-opacity:1;background-color:rgb(255 45 32 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-black:hover{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity))}.hover\:text-black\/70:hover{color:rgb(0 0 0 / 0.7)}.hover\:ring-black\/20:hover{--tw-ring-color:rgb(0 0 0 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus-visible\:ring-1:focus-visible{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}@media (min-width: 640px){.sm\:size-16{width:4rem;height:4rem}.sm\:size-6{width:1.5rem;height:1.5rem}.sm\:pt-5{padding-top:1.25rem}}@media (min-width: 768px){.md\:row-span-3{grid-row:span 3 / span 3}}@media (min-width: 1024px){.lg\:col-start-2{grid-column-start:2}.lg\:h-16{height:4rem}.lg\:max-w-7xl{max-width:80rem}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:items-end{align-items:flex-end}.lg\:justify-center{justify-content:center}.lg\:gap-8{gap:2rem}.lg\:p-10{padding:2.5rem}.lg\:pb-10{padding-bottom:2.5rem}.lg\:pt-0{padding-top:0px}.lg\:text-\[\#FF2D20\]{--tw-text-opacity:1;color:rgb(255 45 32 / var(--tw-text-opacity))}}@media (prefers-color-scheme: dark){.dark\:block{display:block}.dark\:hidden{display:none}.dark\:bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity))}.dark\:bg-zinc-900{--tw-bg-opacity:1;background-color:rgb(24 24 27 / var(--tw-bg-opacity))}.dark\:via-zinc-900{--tw-gradient-to:rgb(24 24 27 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)}.dark\:to-zinc-900{--tw-gradient-to:#18181b var(--tw-gradient-to-position)}.dark\:text-white\/50{color:rgb(255 255 255 / 0.5)}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:text-white\/70{color:rgb(255 255 255 / 0.7)}.dark\:ring-zinc-800{--tw-ring-opacity:1;--tw-ring-color:rgb(39 39 42 / var(--tw-ring-opacity))}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:hover\:text-white\/70:hover{color:rgb(255 255 255 / 0.7)}.dark\:hover\:text-white\/80:hover{color:rgb(255 255 255 / 0.8)}.dark\:hover\:ring-zinc-700:hover{--tw-ring-opacity:1;--tw-ring-color:rgb(63 63 70 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 45 32 / var(--tw-ring-opacity))}.dark\:focus-visible\:ring-white:focus-visible{--tw-ring-opacity:1;--tw-ring-color:rgb(255 255 255 / var(--tw-ring-opacity))}}
-        </style>
-    </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <style>
+        /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        [type=button],
+        [type=reset],
+        [type=submit],
+        button {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden] {
+            display: none
+        }
+
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia:
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .-left-20 {
+            left: -5rem
+        }
+
+        .top-0 {
+            top: 0px
+        }
+
+        .-bottom-16 {
+            bottom: -4rem
+        }
+
+        .-left-16 {
+            left: -4rem
+        }
+
+        .-mx-3 {
+            margin-left: -0.75rem;
+            margin-right: -0.75rem
+        }
+
+        .mt-4 {
+            margin-top: 1rem
+        }
+
+        .mt-6 {
+            margin-top: 1.5rem
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .hidden {
+            display: none
+        }
+
+        .aspect-video {
+            aspect-ratio: 16 / 9
+        }
+
+        .size-12 {
+            width: 3rem;
+            height: 3rem
+        }
+
+        .size-5 {
+            width: 1.25rem;
+            height: 1.25rem
+        }
+
+        .size-6 {
+            width: 1.5rem;
+            height: 1.5rem
+        }
+
+        .h-12 {
+            height: 3rem
+        }
+
+        .h-40 {
+            height: 10rem
+        }
+
+        .h-full {
+            height: 100%
+        }
+
+        .min-h-screen {
+            min-height: 100vh
+        }
+
+        .w-full {
+            width: 100%
+        }
+
+        .w-\[calc\(100\%\+8rem\)\] {
+            width: calc(100% + 8rem)
+        }
+
+        .w-auto {
+            width: auto
+        }
+
+        .max-w-\[877px\] {
+            max-width: 877px
+        }
+
+        .max-w-2xl {
+            max-width: 42rem
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .shrink-0 {
+            flex-shrink: 0
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .items-start {
+            align-items: flex-start
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .items-stretch {
+            align-items: stretch
+        }
+
+        .justify-end {
+            justify-content: flex-end
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .gap-6 {
+            gap: 1.5rem
+        }
+
+        .self-center {
+            align-self: center
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .rounded-\[10px\] {
+            border-radius: 10px
+        }
+
+        .rounded-full {
+            border-radius: 9999px
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem
+        }
+
+        .rounded-md {
+            border-radius: 0.375rem
+        }
+
+        .rounded-sm {
+            border-radius: 0.125rem
+        }
+
+        .bg-\[\#FF2D20\]\/10 {
+            background-color: rgb(255 45 32 / 0.1)
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+        }
+
+        .bg-gradient-to-b {
+            background-image: linear-gradient(to bottom, var(--tw-gradient-stops))
+        }
+
+        .from-transparent {
+            --tw-gradient-from: transparent var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+        }
+
+        .via-white {
+            --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)
+        }
+
+        .to-white {
+            --tw-gradient-to: #fff var(--tw-gradient-to-position)
+        }
+
+        .stroke-\[\#FF2D20\] {
+            stroke: #FF2D20
+        }
+
+        .object-cover {
+            object-fit: cover
+        }
+
+        .object-top {
+            object-position: top
+        }
+
+        .p-6 {
+            padding: 1.5rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .py-10 {
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem
+        }
+
+        .px-3 {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .pt-3 {
+            padding-top: 0.75rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .font-sans {
+            font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-sm\/relaxed {
+            font-size: 0.875rem;
+            line-height: 1.625
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+            line-height: 1.75rem
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .text-black {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity))
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .underline {
+            -webkit-text-decoration-line: underline;
+            text-decoration-line: underline
+        }
+
+        .antialiased {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        .shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\] {
+            --tw-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.08);
+            --tw-shadow-colored: 0px 14px 34px 0px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .ring-1 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .ring-transparent {
+            --tw-ring-color: transparent
+        }
+
+        .ring-white\/\[0\.05\] {
+            --tw-ring-color: rgb(255 255 255 / 0.05)
+        }
+
+        .drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\] {
+            --tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.06));
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
+            --tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.25));
+            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
+        }
+
+        .transition {
+            transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .duration-300 {
+            transition-duration: 300ms
+        }
+
+        .selection\:bg-\[\#FF2D20\] *::selection {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 45 32 / var(--tw-bg-opacity))
+        }
+
+        .selection\:text-white *::selection {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .selection\:bg-\[\#FF2D20\]::selection {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 45 32 / var(--tw-bg-opacity))
+        }
+
+        .selection\:text-white::selection {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity))
+        }
+
+        .hover\:text-black:hover {
+            --tw-text-opacity: 1;
+            color: rgb(0 0 0 / var(--tw-text-opacity))
+        }
+
+        .hover\:text-black\/70:hover {
+            color: rgb(0 0 0 / 0.7)
+        }
+
+        .hover\:ring-black\/20:hover {
+            --tw-ring-color: rgb(0 0 0 / 0.2)
+        }
+
+        .focus\:outline-none:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px
+        }
+
+        .focus-visible\:ring-1:focus-visible {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
+        }
+
+        .focus-visible\:ring-\[\#FF2D20\]:focus-visible {
+            --tw-ring-opacity: 1;
+            --tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity))
+        }
+
+        @media (min-width: 640px) {
+            .sm\:size-16 {
+                width: 4rem;
+                height: 4rem
+            }
+
+            .sm\:size-6 {
+                width: 1.5rem;
+                height: 1.5rem
+            }
+
+            .sm\:pt-5 {
+                padding-top: 1.25rem
+            }
+        }
+
+        @media (min-width: 768px) {
+            .md\:row-span-3 {
+                grid-row: span 3 / span 3
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:col-start-2 {
+                grid-column-start: 2
+            }
+
+            .lg\:h-16 {
+                height: 4rem
+            }
+
+            .lg\:max-w-7xl {
+                max-width: 80rem
+            }
+
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .lg\:grid-cols-2 {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+
+            .lg\:flex-col {
+                flex-direction: column
+            }
+
+            .lg\:items-end {
+                align-items: flex-end
+            }
+
+            .lg\:justify-center {
+                justify-content: center
+            }
+
+            .lg\:gap-8 {
+                gap: 2rem
+            }
+
+            .lg\:p-10 {
+                padding: 2.5rem
+            }
+
+            .lg\:pb-10 {
+                padding-bottom: 2.5rem
+            }
+
+            .lg\:pt-0 {
+                padding-top: 0px
+            }
+
+            .lg\:text-\[\#FF2D20\] {
+                --tw-text-opacity: 1;
+                color: rgb(255 45 32 / var(--tw-text-opacity))
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .dark\:block {
+                display: block
+            }
+
+            .dark\:hidden {
+                display: none
+            }
+
+            .dark\:bg-black {
+                --tw-bg-opacity: 1;
+                background-color: rgb(0 0 0 / var(--tw-bg-opacity))
+            }
+
+            .dark\:bg-zinc-900 {
+                --tw-bg-opacity: 1;
+                background-color: rgb(24 24 27 / var(--tw-bg-opacity))
+            }
+
+            .dark\:via-zinc-900 {
+                --tw-gradient-to: rgb(24 24 27 / 0) var(--tw-gradient-to-position);
+                --tw-gradient-stops: var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)
+            }
+
+            .dark\:to-zinc-900 {
+                --tw-gradient-to: #18181b var(--tw-gradient-to-position)
+            }
+
+            .dark\:text-white\/50 {
+                color: rgb(255 255 255 / 0.5)
+            }
+
+            .dark\:text-white {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity))
+            }
+
+            .dark\:text-white\/70 {
+                color: rgb(255 255 255 / 0.7)
+            }
+
+            .dark\:ring-zinc-800 {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(39 39 42 / var(--tw-ring-opacity))
+            }
+
+            .dark\:hover\:text-white:hover {
+                --tw-text-opacity: 1;
+                color: rgb(255 255 255 / var(--tw-text-opacity))
+            }
+
+            .dark\:hover\:text-white\/70:hover {
+                color: rgb(255 255 255 / 0.7)
+            }
+
+            .dark\:hover\:text-white\/80:hover {
+                color: rgb(255 255 255 / 0.8)
+            }
+
+            .dark\:hover\:ring-zinc-700:hover {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(63 63 70 / var(--tw-ring-opacity))
+            }
+
+            .dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity))
+            }
+
+            .dark\:focus-visible\:ring-white:focus-visible {
+                --tw-ring-opacity: 1;
+                --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity))
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-rGSgTYUUCw6VFzYQp7c3NwkGXy2/KIGekvV4aAZ9ZuHcEoY0ykgN7mzf1bC+J4sXxu/eMHsfoEWiu7kVjF6TvA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/2c018cead1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="antialiased">
+    <div class="bg-gray-50 text-black/50">
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
@@ -26,17 +924,103 @@
                         </div>
                         @if (Route::has('login'))
                             <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
+                                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                                    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
+                                        <span class="self-center text-2xl font-semibold whitespace-nowrap">DentalNet</span>
+                                    </a>
+                                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                                        <button type="button"
+                                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
+                                            started</button>
+                                        <button data-collapse-toggle="navbar-sticky" type="button"
+                                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                            aria-controls="navbar-sticky" aria-expanded="false">
+                                            <span class="sr-only">Open main menu</span>
+                                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 17 14">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M1 1h15M1 7h15M1 13h15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                                        <ul
+                                            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                                    aria-current="page">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Services</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                                    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
+                                        <span class="self-center text-2xl font-semibold whitespace-nowrap">DentalNet</span>
+                                    </a>
+                                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                                        <button type="button"
+                                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
+                                        started</button>
+                                        <button data-collapse-toggle="navbar-sticky" type="button"
+                                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                        aria-controls="navbar-sticky" aria-expanded="false">
+                                        <span class="sr-only">Open main menu</span>
+                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 17 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M1 1h15M1 7h15M1 13h15" />
+                                    </svg>
+                                </button>
+                            </div>
+                            @auth
+                                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                                        <ul
+                                            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                                    aria-current="page">Home</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Services</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                     <a
                                         href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                     >
                                         Dashboard
                                     </a>
                                 @else
                                     <a
                                         href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                     >
                                         Log in
                                     </a>
@@ -44,7 +1028,7 @@
                                     @if (Route::has('register'))
                                         <a
                                             href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                                         >
                                             Register
                                         </a>
@@ -54,119 +1038,572 @@
                         @endif
                     </header>
 
-                    <main class="mt-6">
-                        <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                id="docs-card"
-                                class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div id="screenshot-container" class="relative flex w-full flex-1 items-stretch">
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                        onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        "
-                                    />
-                                    <img
-                                        src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                        alt="Laravel documentation screenshot"
-                                        class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block"
-                                    />
-                                    <div
-                                        class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900"
-                                    ></div>
-                                </div>
-
-                                <div class="relative flex items-center gap-6 lg:items-end">
-                                    <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                        <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                            <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="#FF2D20" d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z"/><path fill="#FF2D20" d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z"/></svg>
+    {{-- <main class="mt-6"> --}}
+        {{-- barra de navegacion --}}
+        <header>
+            <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+                {{-- <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                                        <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                                            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
+                                            <span class="self-center text-2xl font-semibold whitespace-nowrap">DentalNet</span>
+                                        </a>
+                                        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                                            <button type="button"
+                                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Get
+                                                started</button>
+                                            <button data-collapse-toggle="navbar-sticky" type="button"
+                                                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                                aria-controls="navbar-sticky" aria-expanded="false">
+                                                <span class="sr-only">Open main menu</span>
+                                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 17 14">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M1 1h15M1 7h15M1 13h15" />
+                                                </svg>
+                                            </button>
                                         </div>
-
-                                        <div class="pt-3 sm:pt-5 lg:pt-0">
-                                            <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                            <p class="mt-4 text-sm/relaxed">
-                                                Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                            </p>
+                                        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                                            <ul
+                                                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900">
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                                        aria-current="page">Home</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">About</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Services</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent">Contact</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
+                                    </div> --}}
+            </nav>
+        </header>
 
-                                    <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                                </div>
-                            </a>
+        <main>
+            {{-- Seccion 1:hero /  intro section imagen principal --}}
+            <div class="grid grid-cols-2 gap-4 bg-my-gray p-16 mt-16">
+                <div class="col-start-1">
+                    <p class="font-ubuntu font-bold text-2xl text-pretty"> Ofrecemos un servicio de alta calidad </p>
+                    <p class="font-">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quos natus eius voluptatum
+                    </p>
+                    <div class="grid grid-cols-2 pt-16">
+                        <form action="#" method="POST">
+                            @csrf <!-- Token CSRF para proteger tu formulario -->
+                            <button
+                                class="font-ubuntu bg-my-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-md">
+                                Comenzar
+                            </button>
+                        </form>
+                        <form action="#" method="POST">
+                            @csrf <!-- Token CSRF para proteger tu formulario -->
+                            <button
+                                class="font-ubuntu rounded-md font-bold py-2 px-6  border
+                                                    hover:bg-my-blue text-black  border-blue-900">
+                                Leer más
+                            </button>
+                        </form>
+                    </div>
 
-                            <a
-                                href="https://laracasts.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]"
-                            >
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><g fill="#FF2D20"><path d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z"/><path d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z"/><path d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z"/></g></svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                    </p>
-                                </div>
-
-                                <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"/></svg>
-                            </a>
-
-                            <div class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                    <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                        <g fill="#FF2D20">
-                                            <path
-                                                d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z"
-                                            />
-                                        </g>
-                                    </svg>
-                                </div>
-
-                                <div class="pt-3 sm:pt-5">
-                                    <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                    <p class="mt-4 text-sm/relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>, <a href="https://vapor.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>, <a href="https://nova.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>, <a href="https://envoyer.io" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>, and <a href="https://herd.laravel.com" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>, <a href="https://laravel.com/docs/horizon" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>, and more.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                </div>
+                <div class="">
+                    <img src="{{ asset('images/dentist-hero.png') }}" alt="dentista profesional" class="">
                 </div>
             </div>
+
+            {{-- Seccion 2: Primera franja | Llamada telefonica | Agenda tu cita | Consuta --}}
+            <div class="grid grid-cols-4 bg-my-blue
+                                text-white">
+                <div class="col-start-1 mt-12 pl-4">
+                    <h1 class="font-ubuntu font-bold text-2xl">¿Cuáles son nuestros servicios?</h1>
+                    <p>sigue los siguientes pasos
+                    <p>
+                </div>
+
+
+
+                {{-- Targetas  --}}
+                <div
+                    class="rounded-md overflow-hidden border-4 shadow-lg hover:border-my-skyblue  transition duration-300 bg-white m-8 ">
+                    <div class=" px-10 py-4">
+                        <svg class="fill-current text-slate-700  w-10 h-10 ml-7" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="">
+                            <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                        <div
+                            class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                            <h1>Tu estado en tiempo real</h1>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Targetas  2  --}}
+                <div
+                    class="rounded-md overflow-hidden border-4 shadow-lg hover:border-my-skyblue  transition duration-300 bg-white m-8 ">
+                    <div class=" px-10 py-4">
+                        <svg class="stroke-current text-slate-700  w-10 h-10 ml-7" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                        </svg>
+
+                        <div
+                            class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                            <h1>Agenda tu cita</h1>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Targetas 3  --}}
+                <div
+                    class="rounded-md overflow-hidden border-4 shadow-lg hover:border-my-skyblue  transition duration-300 bg-white m-8 ">
+                    <div class=" px-10 py-4">
+                        <svg class="stroke-current text-slate-700  w-10 h-10 ml-7" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+                        </svg>
+
+                        </svg>
+                        <div
+                            class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                            <h1>Sistema de recetas</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Seccion 3: Que es lo que ofrecemos  --}}
+            <div class="font-ubuntu grid grid-cols-2 bg-white mx-auto pl-4  p-4 ">
+                <div class="pt-16 text-center bg-my-gray  rounded-br-2xl">
+                    <h1 class="text-2xl">"Un dia sin sonreir es un dia perdido"</h1>
+                    <p>-Charles Chaplin</p>
+                </div>
+                <div class="col-start-2 gap-8 mx-4">
+                    <h1 class="text-2xl mb-4 "> Nosotros te garantizamos</h1>
+
+                    <ul class="gap-4">
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+                        <li class="font-bold text-slate-700">
+                            <svg class="w-6 h-6 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            {{-- Seccion 4: Que es lo que nos hace especial --}}
+            <div class="font-ubuntu">
+                <div class="grid grid-cols-2  mt-2 mx-6">
+                    <h1 class="font-bold text-2xl">¿Qué nos hace</h1>
+                    <h1 class="font-bold text-3xl col-start-1">especiales?</h1>
+                    <h1 class="col-start-2">Futuro Claves</h1>
+                </div>
+                <div class="grid grid-cols-3  mt-2">
+
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    {{-- Targetas  --}}
+                    <div
+                        class="rounded-md bg-my-gray p-4 rounded-lg shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+            </div>
+
+            {{-- Seccion 5: Franja motivadora --}}
+            <div class="grid grid-cols-1 bg-my-blue w-full h-80 text-center text-white font-ubutu">
+                <h1 class="pt-8 text-3xl">Let us bighten Your Smile!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Cumque fugit distinctio sunt fugiat dolor sequi nisi beatae
+                    officiis, ratione consectetur fuga pariatur. Earum dignissimos distinctio vitae nulla
+                    necessitatibus, quidem itaque.
+                <p>
+                <form action="#" method="POST">
+                    @csrf <!-- Token CSRF para proteger tu formulario -->
+                    <button
+                        class="font-ubuntu bg-my-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-md border ">
+                        Comenzar
+                    </button>
+                </form>
+
+            </div>
+
+            {{-- Seccion 6: Quienes somos --}}
+            <div class="grid grid-cols-2 mt-10 p-10 font-ubuntu ">
+                <h1 class="text-4xl text-start font-bold"> Quienes somos</h1>
+                <h1 class="font-bold text-xl"> Nuestra gloriosa historia</h1>
+                <div class="">
+                    <img src="{{ asset('images/quienes-somos.png') }}" alt="quienes somos" class="w-80 h-auto">
+                </div>
+                <div class="col-start-2">
+                    <div class="bg-my-gray p-6 rounded-md border-2">
+                        <h1 class="text-bold"> Nuestra Historia </h1>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id porta velit, at porttitor
+                        justo. Curabitur a fermentum ipsum. Ut id purus vel libero fringilla vehicula sed ac lectus.
+                        Fusce at lobortis velit, at congue magna. Aenean a mauris diam. Sed ac auctor ex. Praesent
+                        aliquam sagittis lectus, et interdum est elementum eget.
+                    </div>
+                </div>
+            </div>
+
+            {{-- Seccion 7: Conoce a nuestros doctores --}}
+            <div class="grid grid-col-4 mx-8">
+                <div class="grid grid-cols-2  mt-10">
+                    <h1 class="text-2xl text-bold">Conoce a nuestros doctores</h1>
+                </div>
+
+                <div class="grid grid-cols-4">
+
+                    <div
+                        class="rounded-md col-start-1 bg-my-gray p-4 shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                            flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-md col-start-2 bg-my-gray p-4 shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                        flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-md col-start-3 bg-my-gray p-4 shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                    flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="rounded-md col-start-4 bg-my-gray p-4 shadow-md transform hover:scale-105 transition duration-300  m-8 ">
+                        <div class=" px-10 py-4">
+                            <svg class="fill-current text-slate-700  w-10 h-10 ml-7 text-center"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" class="">
+                                <path class=""stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <div
+                                class="font-ubuntu  text-lg w-full text-slate-700
+                                flex justify-center items-center">
+                                <h1 class="text-bold text-center">Tu estado en tiempo real</h1>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                {{-- Seccion 8: Testimonios de nuestros clientes | Carrusel --}}
+                <div class="grid grid-cols-2 bg-my-blue  w-full h-80 font-ubuntu text-white ">
+                    <h1> Aca va una imagen</h1>
+                    <div class="col-start-2  container mx-auto my-auto">
+                        <h1 class="text-center text-2xl"> ¿Qué es lo que nuestros clientes piensan de nosotros?</h1>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex maiores porro cum quae officia!
+                            Voluptatem neque itaque quos, beatae fugiat placeat corporis modi laudantium quaerat ab
+                            asperiores
+                            ratione quidem quibusdam!</p>
+                    </div>
+
+                </div>
+
+                {{-- Seccion 9: Formulario de contacto --}}
+                <div class="grid grid-cols-2 bg-white m-10 ">
+                    <div class="col-start-1">
+                        <h1 class="text-center mx-auto">Formulario de contacto</h1>
+                        {{-- <img class="w-80 h-full "src="/images/formulario-imagen.png" alt="Imagen del formulario de contacto" /> --}}
+                    </div>
+
+                    <div class="col-start-2 font-ubuntu">
+                        <div class="max-w-md mx-auto">
+                            <h1>Formulario de contacto</h1>
+                            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                              <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                                  Nombre
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Nombre">
+                              </div>
+                              <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                                  Teléfono
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="tel" placeholder="Teléfono">
+                              </div>
+                              <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                  Correo Electrónico
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Correo Electrónico">
+                              </div>
+                              <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                                  Mensaje
+                                </label>
+                                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Mensaje"></textarea>
+                              </div>
+                              <div class="mb-4">
+                                <input class="mr-2 leading-tight" type="checkbox" id="accept">
+                                <label class="text-gray-700 text-sm font-bold mb-2" for="accept">
+                                  Acepto las políticas
+                                </label>
+                              </div>
+                              <form action="#" method="POST">
+                                @csrf <!-- Token CSRF para proteger tu formulario -->
+                                <button
+                                    class="font-ubuntu bg-my-blue hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-md mx-auto my-auto">
+                                    enviar
+                                </button>
+                            </form>
+                              </div>
+                            </form>
+                          </div>
+
+                    </div>
+
+                </div>
+        </main>
+
+    </main>
+
+    <footer class=" bg-my-blue text-white">
+        {{-- Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }}) --}}
+        <div class="grid grid-cols-2 h-40 w-full bg-my-blue mt-10">
+            <div class="mt-4 px-4">
+                     <svg width="40" height="" viewBox="0 0 2170 2076" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1997.5 641.547C1926 499.547 1853.94 407.192 1743 309.047C1611.95 204.824 1543.15 171.824 1419 128.547C1156.44 62.0113 1002.95 59.0668 708.002 169.547C385.071 331.031 135.199 638.406 149.002 1097.54C162.804 1556.68 549.9 1911.71 944.002 1986.04C1459.82 2053.19 1822.79 1784.03 1980.21 1468.69C1987.32 1454.06 1994.25 1439.18 2001 1424.04C1994.53 1439.01 1987.59 1453.9 1980.21 1468.69C1776.93 1887.03 1427.59 2098.2 944.002 2074.05C280.881 1989.84 25.0016 1494.54 0.00156866 1090.04C-0.719567 614.609 247.262 259.216 607.502 92.0467C962.502 -70.4533 1327 11.5468 1508 113.547C1756.42 256.518 1866.42 369.008 1997.5 641.547Z" fill="#ffffff"/>
+                        <path d="M2019.5 704.547L2002 801.547L1909 817.547L2004.5 833.547L2019.5 926.547L2036 833.547L2132 817.547L2036 799.047L2019.5 704.547Z" fill="#ffffff"/>
+                        <path d="M1838.75 515.547L1834.36 539.578L1811 543.542L1834.98 547.506L1838.75 570.547L1842.89 547.506L1867 543.542L1842.89 538.959L1838.75 515.547Z" fill="#ffffff"/>
+                        <path d="M2102.4 488.547L2091.88 547.97L2036 557.772L2093.39 567.574L2102.4 624.547L2112.32 567.574L2170 557.772L2112.32 546.439L2102.4 488.547Z" fill="#ffffff"/>
+                        <path d="M968.002 1436.05C938.448 1602.5 956.872 1860 962.196 1909.73C962.37 1911.35 962.498 1912.42 962.573 1913.01C962.679 1913.73 962.673 1913.79 962.573 1913.01C962.438 1912.09 962.123 1910.1 961.588 1907.41L937.501 1786.05L922.502 1669.55C913.752 1582.81 914.642 1534.21 927.502 1447.55C934.975 1400.09 943.556 1374.2 963.659 1335.73C966.511 1330.27 969.947 1325.13 973.813 1320.34L981.186 1311.2C988.972 1301.54 998.743 1293.68 1009.84 1288.13L1010.72 1287.69C1016.22 1284.94 1022.03 1282.84 1028.02 1281.46C1044.56 1277.62 1061.89 1279.28 1077.41 1286.17L1085 1289.54C1090.99 1292.21 1096.7 1295.45 1102.05 1299.23L1113.53 1307.33C1117.51 1310.14 1121.27 1313.23 1124.8 1316.59L1144.58 1335.41C1148.52 1339.16 1152.15 1343.23 1155.43 1347.57L1184.5 1386.05L1220.5 1443.55L1250 1503.05L1279.5 1572.05L1304 1641.05L1329 1716.05L1253.5 1545.55L1209.5 1459.55L1166.06 1393.71C1162.69 1388.61 1158.87 1383.83 1154.64 1379.44L1132.15 1356.07C1125.75 1349.42 1118.46 1343.69 1110.49 1339.04L1095.11 1330.07C1081.75 1322.28 1066.18 1319.14 1050.84 1321.16C1029.77 1323.93 1011.12 1336.15 1000.16 1354.36L992.549 1366.99C989.523 1372.02 986.946 1377.3 984.846 1382.78L976.501 1404.55L968.002 1436.05Z" fill="#ffffff"/>
+                        <path d="M1209.5 578.047C1209.5 578.047 1104.5 608.547 1003 588.047C1031.44 606.72 1051.93 616.144 1105.5 629.047C1142 635.047 1175.29 635.838 1217.5 632.047C1270.96 625.015 1301.07 619.958 1355 609.047C1429.35 599.267 1473.87 589.503 1512 634.547C1553 707.047 1564.12 788.898 1539.5 1038.05C1529.34 1112.78 1521.79 1154.43 1507 1228.55C1492.8 1287.26 1486.29 1321.12 1468 1380.55C1449.71 1439.97 1361.41 1712.13 1369.5 1695.05C1470.07 1502.3 1520.55 1388.61 1593 1169.05C1602.8 1137.77 1607.87 1120.26 1616.5 1089.05C1626.21 1049.03 1631.51 1025.98 1640.5 983.047C1653.64 912.649 1659.41 872.547 1666 799.547C1667.68 757.37 1667.53 733.723 1666 691.547C1658.2 630.917 1653 611.054 1643 588.047C1629.14 554.864 1617.52 539.414 1590.5 517.047C1558.78 498.264 1537.97 492.871 1495 493.047C1454.28 495.71 1428.82 500.281 1373.5 520.047C1310.98 545.186 1275.17 558.051 1209.5 578.047Z" fill="#ffffff"/>
+                        <path d="M806.001 541.547C866.501 605.047 971.501 700.547 1110.5 713.047C1075.49 717.307 1054.69 717.63 1015.5 714.547C939.824 708.112 897.396 693.712 821.501 654.047C745.594 612.891 704.411 591.828 658.501 594.547C626.341 604.056 607.84 611.078 572.501 645.547C533.791 693.513 522.545 728.46 514.501 800.047C512.424 903.209 528.392 967.837 560.501 1084.55L657.501 1342.55L897.501 1889.05C765.506 1690.66 686.162 1583.14 575.501 1357.55C462.805 1102.9 422.623 976.099 411.501 805.547C406.142 686.67 417.012 629.938 462.001 554.547C515.501 477.047 555.484 454.482 643.001 455.047C701.348 460.124 737.776 483.061 806.001 541.547Z" fill="#ffffff"/>
+                    </svg>
+
+
+            </div>
+            <div>
+                <h1>Footer</h1>
+            </div>
+            <div>
+                <h1>Footer</h1>
+            </div>
         </div>
-    </body>
+        <div class="bg-my-skyblue font-ubuntu  my-auto py-2">
+            <h1 class="text-center my-auto mx-auto  text-sm"> &copy; DentalNet 2024, Todos los derechos reservados</h1>
+        </div>
+    </footer>
+</div>
+    </div>
+    </div>
+
+</body>
+
 </html>
